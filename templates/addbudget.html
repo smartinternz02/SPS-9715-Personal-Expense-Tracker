@@ -1,0 +1,56 @@
+
+{% extends '_dashboardlayout.html' %}
+{% block body %}
+<div class="add-budget">
+    <div class="top">
+        {{msg}}
+        <div class="top-contents">
+            <span>Available Budget in {{day}} {{month}} {{year}} :</span>
+            <span style="font-size: 48px; color: red; font-weight: bold;">{{ notice }}</span>    
+            <span class="finalvalue">{{ finalamount}}</span>
+            <div class="income">
+                <span>income</span>
+                <span id="right"> {{ fincome }}</span>
+            </div>
+            <div class="expense">
+                <span>Expense</span>
+                <span id="right">{{ fexpense }}</span>
+            </div>
+        </div>
+    </div>
+    <form action="/addbudget" method="POST">
+        <div class="budget-tab">
+            <input type="date" name="date" id="">
+            <select name="select" id="">
+                <option value="+">+</option>
+                <option value="-">-</option>
+            </select>
+            <input type="text" name="description" id=""placeholder="Add description">
+            <input type="tel" name="value" id="" placeholder="Value">
+            <button>Add</button>
+        </div>
+    </form>
+    <div class="display">
+        <div class="display-income">
+            <div class="incomec">Income</div>
+            {% for value in incomes %}
+            <label for="value">{{ value.3 }}
+                <span id="right" class="incomec">
+                    {{ value.4 }}
+                </span>
+            </label>                            
+            {% endfor %}
+        </div>
+        <div class="display-expense">
+            <div class="expensec">Expenses</div>
+            {% for value in expenses %}
+            <label for="value">{{value.3}}
+                <span id="right" class="expensec">
+                    {{value.4}}
+                </span>
+            </label>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

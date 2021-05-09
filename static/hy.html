@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/dashboard.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js">
+    <title>Document</title>
+</head>
+<body>
+    <div class="chart">
+        <canvas id="linechart" width="960" height="500"></canvas>
+    </div>
+    <script>
+        var ctx = document.getElementById("linechart").getContest("2d");
+        var linechart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: {{ labels | safe}},
+                dataset: [
+                {
+                    label: "data Points",
+                    data: {{ values | safe}},
+                    fill: false,
+                    borderColor: "rgba(75,192,192)",
+                    lineTension: 0.5
+                }
+                ]
+            },
+            options: {
+                responsive: false
+            }
+        })
+    </script>
+</body>
+</html>

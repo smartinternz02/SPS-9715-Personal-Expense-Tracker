@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title>My Chart.js Chart</title>
+</head>
+<body>
+  <div class="container">
+    <canvas id="myChart" width="1300" height="600"></canvas>
+  </div>
+  <script>
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    Chart.defaults.global.defaultFontFamily = 'Poppins';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+
+    let massPopChart = new Chart(myChart, {
+      type:'line',
+      data:{
+        labels: {{ labels | safe }},
+        datasets:[{
+          label:'Incomes',
+          data: {{ values | safe }},
+          backgroundColor:'#ffc7ce',
+          borderWidth:1,
+          borderColor:'#9c0006',
+        },{
+        label:'Expense',
+          data: {{ expense | safe }},
+          backgroundColor:'#c6efce',
+          borderWidth:1,
+          borderColor:'#2c6100',
+        }]
+      },
+      options:{
+        responsive: false,
+        title:{
+          display:true,
+          text:'Graphical Analytics',
+          fontSize:25
+        },
+        legend:{
+          display:true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left:50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+      }
+    });
+  </script>
+</body>
+</html>
