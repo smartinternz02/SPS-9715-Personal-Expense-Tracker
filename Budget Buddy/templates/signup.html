@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png"href="{{url_for('static',filename='favicon.png')}}">
+    <link rel="stylesheet" href="../static/signup.css">
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <title>Sign Up | Budget Buddy</title>
+</head>
+<body>
+    <main>
+        <div class="login-wrapper">
+            <div class="login-content">
+                <h3>Sign up</h3>
+                <h6>Please fill in this form to create an account</h6>
+                <p class="line"></p>
+                <div class="alert {{ indicator }}"> {{msg}}</div>  
+                <form action="/registerdata" method="POST">
+                <div class="login-fields">      
+                    <div class="inputs name">
+                        <input type="text" name="firstname" required placeholder="First Name" id="left" autofocus>
+                        <input type="text" name="lastname" required placeholder="Last Name" id="right">
+                    </div>
+                    <div class="inputs">
+                        <input type="text" name="username" required placeholder="Username">
+                    </div>
+                    <div class="inputs">
+                        <input type="text" name="email" required placeholder="Email">
+                    </div>
+                    <div class="inputs">
+                    <input type="password" name="password" required placeholder="Password">
+                    </div>
+                    <div class="inputs">
+                        <input type="password" name="cpassword" required placeholder="Confirm Password">
+                    </div>
+                    <div class="inputs">
+                        <input type="text" name="mobile" required placeholder="Mobile Number (+91)" maxlength="10">
+                    </div>
+                    <div class="conditions">
+                        <input type="checkbox" name="checkbox">
+                        <span class="custom-checkbox"></span>
+                        <span >I accept <a href="#">Terms of Use</a> & <a href="#">Privacy policy</a></span>
+                    </div>
+                    <label for="click">
+                    <button type="submit" name="submit">Sign Up</button></label>
+                    </form>
+                    <div class="footer">
+                        <p>Already a member ? <a href="/login">Login</a></p>
+                    </div>
+                </div>
+        </div>
+    </main>
+    <div class="side">
+        <img src="{{url_for('static',filename='signup.png')}}" alt="" style="size: 10px;">
+    </div>
+</body> 
+</html>

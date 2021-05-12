@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@700&family=Poppins:wght@300&display=swap');
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+}
+.gotop{
+    position: relative;
+    width: 60px;
+    height: 60px;
+    z-index: 2;
+    right: 20px;
+    bottom: 20px;
+    position: fixed;
+    background: #7048a9;
+    border-radius: 50%;
+    visibility: hidden;
+    opacity: 0;
+}
+.gotop i{
+    position: absolute;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+.gotop:active{
+    border: 4px solid #7048a9;
+    background: none;
+    color: #7048a9;
+    background: white;
+}
+.gotop:active > i {
+    color: #7048a9;
+    font-weight: 900;
+}
+.active{
+    visibility: visible;
+    opacity: 100;
+}
+.top{
+    position: relative;
+    width: 100%;    
+    height: 791px;
+    background-image:url(homebg.jpg);
+    background-size:cover;
+    overflow-x: hidden;
+}
+.head {
+    position: relative;
+}
+.home {
+    position: relative;
+    left: 50px;
+    top: 60px;
+}
+
+.home span {
+    font-family: 'Domine', serif;
+    display: block;
+}
+#budget{
+    position: absolute;
+    left: 150px;
+    top: 30px;
+    font-size: 70px;
+    color: #7048a9;
+    font-weight: bold;
+}
+#buddy {
+    position: absolute;
+    left: 270px;
+    top: 105px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    letter-spacing: 10px;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.head-right {
+    position: absolute;
+    right: 70px;
+    top: 105px
+}
+button {
+    width: 180px;
+    padding: 15px 15px;
+    background: none;
+    color: white;
+    border:none;
+    border: 2px solid #7048a9;
+    margin-left: 15px;
+    background: #7048a9;
+    font-size: 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+}
+
+button:hover {
+    background: none;
+    color: #7048a9;
+}
+button:active {
+    background: #7048a9;
+    color: white;
+}
+#signin{
+    background: none;
+    color: #7048a9;
+    transition: all 0.25s ease-in-out;
+}
+#signin:hover{
+    background: #7048a9;
+    color: white;
+}
+#signin:active{
+    background: none;
+    color: #7048a9;
+}
+.head-left{
+    position: relative;
+    width: 550px;
+    height: 350px;
+    left:200px;
+    top: 120px;
+    padding: 15px;
+}
+.head-left .say {
+    color: white;
+    font-family: 'Domine', serif;
+    font-size: 40px;
+}
+span>span{
+    color: #7048a9;
+}
+.say:hover{
+    color: #7048a9;
+}
+.head-left h3{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+    margin-top: 20px;
+    font-size: 24px;
+}
+.say:hover,.head-left h3:hover{
+    color: #7048a9;
+}
+.head-left button {
+    position: relative;
+    width: 60%;
+    top: 40px;
+}
+.head ~ img {
+    position: absolute;
+    right: 120px;
+    top: 210px;
+}
+.tour {
+    position: relative;
+    width: 95%;
+    height: 100vh;
+    margin: 40px;
+    padding: 20px;
+}
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow:hidden;
+    font-family: 'Poppins', sans-serif;
+    padding: 0 2rem;
+}
+.container img {
+    width: 100%;
+}
+.card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    padding: 10px;
+    margin-bottom: 2rem;
+}
+.card h3 {
+    width: 90%;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    border-bottom: 2px solid #7048a9;
+    font-size: 24px;
+}
+.card p {
+    font-weight: 500;
+    font-size: 16px;
+}
+.card img{
+    height: 300px;
+}
+.card > div {
+    padding: 2rem;
+}
+.card:nth-child(even) img {
+    order: 1;
+}
+main {
+    margin: 0 
+}
+footer {
+    position: relative;
+    bottom: -2500px;
+    width: 100%;
+    height: 300px;
+    background-image: url(homebg.jpg);
+    background-size: cover;
+}
+.line {
+    position: absolute;
+    width: 2px;
+    height: 180px;
+    top: 50px;
+    right: 600px;
+    background: #efefef;
+}
+.foot-right{
+    width: 500px;
+    position: absolute;
+    right: 60px;
+    font-family: 'Domine', serif;
+    font-size: 40px;
+    top: 60px;
+    color: white;
+}
+h3 > span {
+    color: #7048a9;
+}
+footer p {
+    position: absolute;
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', serif;
+    font-size: 18px;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #aaa;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    background: #181818;
+}
+::-webkit-scrollbar-track {
+    border-radius: 5px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0,0.25);
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background: #7048a9;
+}
+::-webkit-scrollbar-thumb:hover{
+    background: #5c2d9d;
+}
